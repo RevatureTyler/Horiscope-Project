@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--web.xml is your deployment descriptor
+        this is how tomcat gathers information about your project, such as welcome files,
+            available servlets, how to handle errors and exceptions, and other various
+            configurations you may want tomcat to know about.
+
+    It belongs in src/main/webapp/WEB-INF/ directory
+-->
+<web-app
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://java.sun.com/xml/ns/javaee"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+        version="2.5">
+    <!-- this listener is connected to our DependencyLoadListener class -->
+    <!--this class is responsible to  "listening out" for the servlets we have in our project-->
+    <!-- this id is defining our ServletContextListener -->
+    <listener>
+        <listener-class> com.servlets.DependencyLoaderListener</listener-class>
+    </listener>
+    <!-- here we can map the servlets we've created by extending HttpServlet to the servlet -->
+    <!-- Our User Servlet -->
+<servlet>
+    <servlet-name>horoscopeUserServlet</servlet-name>
+    <servlet-class>com.servlets.HoroscopeUserServlet</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>horoscopeUserServlet</servlet-name>
+        <url-pattern>/horoscopeUserServlet</url-pattern>
+
+    </servlet-mapping>
+    <!-- SignUp Servlet -->
+    <servlet>
+        <servlet-name>signUpServlet</servlet-name>
+        <servlet-class>com.servlets.SignUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>signUpServlet</servlet-name>
+        <url-pattern>/signUp</url-pattern>
+    </servlet-mapping>
+</web-app>
