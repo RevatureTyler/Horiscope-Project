@@ -22,7 +22,7 @@ public class HoroscopeUserDAO implements CustomCRUDInterface<HoroscopeUser> {
     @Override
     public Integer create(HoroscopeUser horoscopeUser) {
         try {
-            String sql = "INSERT INTO horoscope_user (horoscope_user_id,first_name,last_name,email,username,passw,horoscope,mood) VALUES (DEFAULT,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO users (horoscope_user_id,first_name,last_name,email,username,passw,horoscope,mood) VALUES (DEFAULT,?,?,?,?,?,?,?)";
             PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, horoscopeUser.getFirst_name());
             pstmt.setString(2, horoscopeUser.getLast_name());
@@ -110,7 +110,7 @@ public class HoroscopeUserDAO implements CustomCRUDInterface<HoroscopeUser> {
 
     public HoroscopeUser loginHoroscopeUser(String username, String password) {
         try{
-            String sql = "SELECT * FROM horoscope_user WHERE username = ?";
+            String sql = "SELECT * FROM users WHERE username = ?";
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1,username);
 

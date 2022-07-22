@@ -26,6 +26,7 @@
     <servlet-mapping>
         <servlet-name>horoscopeUserServlet</servlet-name>
         <url-pattern>/horoscopeUserServlet</url-pattern>
+        <url-pattern>/homepage</url-pattern>
 
     </servlet-mapping>
     <!-- SignUp Servlet -->
@@ -36,5 +37,13 @@
     <servlet-mapping>
         <servlet-name>signUpServlet</servlet-name>
         <url-pattern>/signUp</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>moodServlet</servlet-name>
+        <servlet-class>com.servlets.MoodServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>moodServlet</servlet-name>
+        <url-pattern>/mood</url-pattern>
     </servlet-mapping>
 </web-app>

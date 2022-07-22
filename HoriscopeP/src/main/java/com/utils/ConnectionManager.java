@@ -37,7 +37,7 @@ public class ConnectionManager {
 
         try {
             Properties props = new Properties();
-            FileReader fileReader = new FileReader("/Users/Tyler's Work/Documents/IntelliJ/HoriscopeP" + "/src/main/resources/jdbc.properties");
+            FileReader fileReader = new FileReader("/Users/Tyler's Work/Documents/IntelliJ/Horiscope-Project/HoriscopeP" + "/src/main/resources/jdbc.properties");
 
             props.load(fileReader);
 

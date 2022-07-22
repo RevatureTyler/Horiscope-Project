@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import static com.utils.CurrentUser.username;
+
 public class MoodServlet extends HttpServlet {
 
     HoroscopeUserDAO horoscopeUserDAO = new HoroscopeUserDAO();
@@ -75,8 +77,10 @@ public class MoodServlet extends HttpServlet {
             out.println(om.writeValueAsString(horoscopeUser));
 
 
+            System.out.println("The user with: " + username + " has logged in");
 
         } else {
+            System.out.println("user is null");
             resp.setStatus(204);
         }
     }
